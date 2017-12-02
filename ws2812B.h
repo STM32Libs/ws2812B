@@ -28,19 +28,24 @@ typedef struct
 }rgb_t;
 
 
+
+
+
+
+
+
 namespace ws
 {
 
     namespace color
     {
-        const rgb_t red;
-        const rgb_t green;
-        const rgb_t blue;
-        const rgb_t black;
-        const rgb_t white;
+        const rgb_t red = {255,0,0};
+        const rgb_t green = {0,255,0};
+        const rgb_t blue = {0,0,255};
+        const rgb_t black = {0,0,0};
+        const rgb_t white = {255,255,255};
     }
 
-    init();
 }
 
 class ws2812B
@@ -48,10 +53,10 @@ class ws2812B
 public:
     ws2812B(PinName pio);
 
-    set(uint8_t R,uint8_t G,uint8_t B);
+    void set(uint8_t R,uint8_t G,uint8_t B);
 private:
     DigitalOut  rgbout;
 
-}
+};
 
 #endif /*__ws2812B__*/
